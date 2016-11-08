@@ -2,13 +2,12 @@
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>A Pen by  YiangosGeorgiou</title>
+  <title>POS inteface</title>
 
 
   <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
 
       <link rel="stylesheet" href="css/style.css">
-
 
 </head>
 
@@ -42,18 +41,9 @@
   </nav>
 
 <div class="container">
-<div class="row">
-  <div class="col-xs-2 col-md-2">
-    <ul class="nav nav-pills nav-stacked">
-      <li id="l" ><a href="#">1</a></li>
-      <li id="l"><a href="#">2</a></li>
-      <li id="l" class="active"><a href="#">3</a></li>
-      <li id="l"><a href="#">4</a></li>
-      <li id="l"><a href="#">5</a></li>
-    </ul>
-  </div>
 
-  <div  class="col-xs-2 col-md-2">
+
+  <div  class="col-xs-4 col-md-4">
     <ul class="nav nav-pills nav-stacked">
       <li id="l" ><a href="#">1</a></li>
       <li id="l"><a href="#">2</a></li>
@@ -65,12 +55,13 @@
 
   <div class="col-xs-8 col-sm-6 col-md-8">
     <p id="h">
+        <?php
+          for($i=0;$i<5;$i++){
+         ?>
           <button id="btn" type="button" class="btn btn-default btn-lg">Large button</button>
-          <button id="btn" type="button" class="btn btn-default btn-lg">Large button</button>
-          <button id="btn" type="button" class="btn btn-default btn-lg">Large button</button>
-          <button id="btn" type="button" class="btn btn-default btn-lg">Large button</button>
-          <button id="btn" type="button" class="btn btn-default btn-lg">Large button</button>
-          <button id="btn" type="button" class="btn btn-default btn-lg">Large button</button>
+          <?php
+        }
+        ?>
     </p>
   </div>
 </div>

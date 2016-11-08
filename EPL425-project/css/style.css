@@ -1,7 +1,18 @@
 
+html, body, .container {
+    height: 100%;
+}
+
 #left{
-  margin-left: 5%;
+  height: 95%;
+  float: left;
 }
 #btn{
-  margin:3%;
+  margin:1%;
+}
+row{
+  border: 1px solid black;
+  background-color: black;
+  padding: 0%;
+  height: 100%;
 }
