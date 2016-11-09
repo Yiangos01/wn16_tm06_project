@@ -14,11 +14,11 @@ html, body, #container{
   background-color: #8FBC8F;
 }
 #btnAddOrder{
-  margin:1%;
+  margin: 1% 1% 1% 90%;
   height: auto;
   width: auto;
   background-color: #FF4500;
-  font-size: 10em;
+
 }
 row{
   border: 1px solid black;
@@ -30,11 +30,11 @@ row{
   overflow-y:scroll;
   height:22em;
 }
-.modal {
+.modifiersClass {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    padding-top: 8%; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -45,13 +45,14 @@ row{
 }
 
 /* Modal Content */
-.modal-content {
+.modifiers-content {
     position: relative;
     background-color: #fefefe;
     margin: auto;
     padding: 0;
     border: 1px solid #888;
     width: 80%;
+    height: auto;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
@@ -85,16 +86,15 @@ row{
     cursor: pointer;
 }
 
-.modal-header {
-    padding: 2px 16px;
+.modifiers-header {
     background-color: #5cb85c;
     color: white;
 }
 
-.modal-body {padding: 2px 16px;}
+.modifiers-body {}
 
-.modal-footer {
-    padding: 2px 16px;
+.modifiers-footer {
+
     background-color: #5cb85c;
     color: white;
 }

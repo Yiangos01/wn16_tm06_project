@@ -45,21 +45,28 @@
       });
 
       // Get the modal
-      var modal = document.getElementById('myModal');
+      var modal = document.getElementById('modifiersid');
 
     function fai(cat){
       //menuitems.innerHTML= '<button id="btn" type="button" class=\"btn btn-default btn-lg\">'+ JSON.categories[cunt].name + '</button>';
       //var categories = document.getElementyId(obj);
       menuitems.innerHTML ="";
       for(var obj in JSON.categories[cat].menuitems){
-        menuitems.innerHTML += '<button id="btn" type="button" class=\"btn btn-default btn-lg\" onclick="modifiers()" >'+ JSON.categories[cat].menuitems[obj].name + '</button>';
+        menuitems.innerHTML += '<button id="btn" type="button" class=\"btn btn-default btn-lg\" onclick="modifiers('+cat+','+obj+')" >'+ JSON.categories[cat].menuitems[obj].name + '</button>';
 
       }
 
     }
 
-    function modifiers(){
+    function modifiers(cat,mitems){
       modal.style.display = "block";
+      modifiersHeaderid.innerHTML = '<h2>'+JSON.categories[cat].menuitems[mitems].name+'</h2>';
+      for(var o1 in JSON.categories[cat].menuitems[mitems].modifiers.categories){
+         modifiersbodyid.innerHTML +='<p><u>'+JSON.categories[cat].menuitems[mitems].modifiers.categories[o1].name+'</u></p>';
+         for(var o2 in JSON.categories[cat].menuitems[mitems].modifiers.categories[o1].modifiers){
+           modifiersbodyid.innerHTML +='<p>'+JSON.categories[cat].menuitems[mitems].modifiers.categories[o1].modifiers[o2].name+'</p>';
+         }
+      }
     }
 
 
@@ -69,7 +76,6 @@
 </head>
 
 <body>
-  <div id="test"></div>
   <nav class="navbar navbar-inverse navbar-static-top">
   <div class="container">
     <a href="#" class="navbar-brand ">POS</a>
@@ -105,20 +111,19 @@
   </div>
 </div>
 
-<!-- The Modal -->
-<div id="myModal" class="modal">
+<!-- Popup modifiers -->
+<div id="modifiersid" class="modifiersClass">
 
   <!-- Modal content -->
-  <div class="modal-content">
-    <div class="modal-header">
+  <div class="modifiers-content">
+    <div class="modifiers-header">
       <span class="close">×</span>
-      <h2>Modal Header</h2>
+      <div id="modifiersHeaderid"></div>
     </div>
-    <div class="modal-body">
-      <p>Some text in the Modal Body</p>
-      <p>Some other text...</p>
+    <div id="modifiersbodyid" class="modifiers-body">
+
     </div>
-    <div class="modal-footer">
+    <div class="modifiers-footer">
       <Button id="btnAddOrder">add to order</Button>
     </div>
   </div>
@@ -127,7 +132,7 @@
 
 <script>
 // Get the modal
-var modal = document.getElementById('myModal');
+var modal = document.getElementById('modifiersid');
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
