@@ -1,5 +1,5 @@
 <?php
-  $str = file_get_contents('https://api.foody.com.cy/branch/multimenu/13?auth=fe5df6b03af002742b6539e6122009e35538b24c&skey=SKEY_5821c4ca697f6&XDEBUG_SESSION_START=PHPSTORM');
+  $str = file_get_contents('https://api.foody.com.cy/branch/multimenu/13?auth=c237b4132fff95103441b7231417f7bf39de9e04&skey=SKEY_5823119c798fd&XDEBUG_SESSION_START=PHPSTORM');
   $json = json_decode($str,true);
   //echo '<pre>' . print_r($json,true) . '</pre>';
   foreach ($json['categories'] as $field => $value) {
