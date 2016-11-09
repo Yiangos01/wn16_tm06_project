@@ -62,10 +62,14 @@
       modal.style.display = "block";
       modifiersHeaderid.innerHTML = '<h2>'+JSON.categories[cat].menuitems[mitems].name+'</h2>';
       for(var o1 in JSON.categories[cat].menuitems[mitems].modifiers.categories){
-         modifiersbodyid.innerHTML +='<p><u>'+JSON.categories[cat].menuitems[mitems].modifiers.categories[o1].name+'</u></p>';
+         modifiersbodyid.innerHTML +='<div class="col-xs-12 col-md-12"<p><u>'+JSON.categories[cat].menuitems[mitems].modifiers.categories[o1].name+'</u></p></div>';
+         //modifiersbodyid.innerHTML +='<p>';
          for(var o2 in JSON.categories[cat].menuitems[mitems].modifiers.categories[o1].modifiers){
-           modifiersbodyid.innerHTML +='<p>'+JSON.categories[cat].menuitems[mitems].modifiers.categories[o1].modifiers[o2].name+'</p>';
+           modifiersbodyid.innerHTML +='<div class="col-xs-4 col-md-4"><div class=" form-group "><input type="checkbox" name="fancy-checkbox-warning" id="fancy-checkbox-warning\''+o1+o2+'\'" autocomplete="off" /><div class="[ btn-group ]"><label for="fancy-checkbox-warning\''+o1+o2+'\'" class="[ btn btn-warning ]"><span class="[ glyphicon glyphicon-ok ]"></span>  <span> </span></label><label for="fancy-checkbox-warning\''+o1+o2+'\'" class="[ btn btn-default active ]">'+JSON.categories[cat].menuitems[mitems].modifiers.categories[o1].modifiers[o2].name+'</label></div></div></div></div>';
+           //'<div class="input-group"><span class="input-group-addon"><input type="checkbox" aria-label="'+JSON.categories[cat].menuitems[mitems].modifiers.categories[o1].modifiers[o2].name+'"></div>';
+           //<button type="button" class="btn btn-primary">'+JSON.categories[cat].menuitems[mitems].modifiers.categories[o1].modifiers[o2].name+'</button>';
          }
+         //modifiersbodyid.innerHTML+='</p>';
       }
     }
 
@@ -101,7 +105,7 @@
     </div>
   </nav>
 
-<div class="container">
+<div class="container col-md-12">
   <div  class="col-xs-4 col-md-4">
     <ul class="nav nav-pills nav-stacked" id='categories'></ul>
   </div>
@@ -120,8 +124,9 @@
       <span class="close">×</span>
       <div id="modifiersHeaderid"></div>
     </div>
-    <div id="modifiersbodyid" class="modifiers-body">
-
+    <div  class="modifiers-body">
+<form class= "form-inline" id="modifiersbodyid">
+</form>
     </div>
     <div class="modifiers-footer">
       <Button id="btnAddOrder">add to order</Button>
