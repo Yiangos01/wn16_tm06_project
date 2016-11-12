@@ -24,7 +24,11 @@
     };
     xhr.send();
     };
+<<<<<<< HEAD
     getJSON("https://api.foody.com.cy/branch/multimenu/13?auth=be0eeec6e79c85f1f89318afc8ca6dec58c1a07e&skey=SKEY_58270e7617b4a&XDEBUG_SESSION_START=PHPSTORM",
+=======
+    getJSON("https://api.foody.com.cy/branch/multimenu/283?auth=be0eeec6e79c85f1f89318afc8ca6dec58c1a07e&skey=SKEY_58270ce872c1c&XDEBUG_SESSION_START=PHPSTORM",
+>>>>>>> 0189d5d989a5272aa85a93814acedecf82d7e6c5
       function(err, data) {
         if (err != null) {
           alert("Something went wrong: " + err);
