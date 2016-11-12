@@ -47,7 +47,7 @@ row{
 /* Modal Content */
 .modifiers-content {
     position: relative;
-    background-color: #fefefe;
+    background-color: #e6f2ff;
     margin: auto;
     padding: 0;
     border: 1px solid #888;
@@ -78,7 +78,13 @@ row{
     font-size: 28px;
     font-weight: bold;
 }
-
+.close1 {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0%;
+}
 .close:hover,
 .close:focus {
     color: #000;
@@ -87,12 +93,15 @@ row{
 }
 
 .modifiers-header {
-    background-color: #5cb85c;
+    top=0;
+    background-color: black;
     color: white;
 }
 
-.modifiers-body {height: auto;
-width: auto;}
+.modifiers-body {\
+    height: auto;
+    width: auto;
+}
 
 .modifiers-footer {
     color: white;
@@ -116,4 +125,28 @@ width: auto;}
 }
 .form-group input[type="checkbox"]:checked + .btn-group > label span:last-child {
     display: none;
+}
+.cachier{
+    border: 1px solid gray;
+    border-radius: 20px;
+    background-color: white;
+}
+.cachierBody{
+  padding-left: 5%;
+  background-color: #C2CCFD;
+}
+.extra{
+  padding-left: 5%;
+  font-size: 70%;
+  list-style-type: none;
+}
+.center{
+  text-align: center;
+}
+.left{
+  float:right;
+  margin-right: 5%;
+}
+.right{
+  margin-left: 5%;
 }

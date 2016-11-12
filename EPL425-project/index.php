@@ -9,7 +9,10 @@
    <link rel="stylesheet" href="css/style.css">
 
    <script type="text/javascript">
+    var array=[];
    var JSON;
+   var i=0;
+   var value=0;
    var getJSON = function(url, callback) {
     var xhr = new XMLHttpRequest();
     xhr.open("get", url, true);
@@ -24,16 +27,13 @@
     };
     xhr.send();
     };
-<<<<<<< HEAD
     getJSON("https://api.foody.com.cy/branch/multimenu/13?auth=be0eeec6e79c85f1f89318afc8ca6dec58c1a07e&skey=SKEY_58270e7617b4a&XDEBUG_SESSION_START=PHPSTORM",
-=======
-    getJSON("https://api.foody.com.cy/branch/multimenu/283?auth=be0eeec6e79c85f1f89318afc8ca6dec58c1a07e&skey=SKEY_58270ce872c1c&XDEBUG_SESSION_START=PHPSTORM",
->>>>>>> 0189d5d989a5272aa85a93814acedecf82d7e6c5
       function(err, data) {
         if (err != null) {
           alert("Something went wrong: " + err);
         } else {
           JSON = data;
+
           //var cat = document.getElementyId("categories")
           //test.innerHTML=data.categories[0].name;
           for(var obj in data.categories){
@@ -59,24 +59,50 @@
     }
 
     function modifiers(cat,mitems){
+      array=[];
+      if(JSON.categories[cat].menuitems[mitems].modifiers.hasmodifiers){
       modal.style.display = "block";
       modifiersHeaderid.innerHTML = '<h2>'+JSON.categories[cat].menuitems[mitems].name+'</h2>';
+      modifiersbodyid.innerHTML= ' ';
       for(var o1 in JSON.categories[cat].menuitems[mitems].modifiers.categories){
          modifiersbodyid.innerHTML +='<div class="col-xs-12 col-md-12"<p><u>'+JSON.categories[cat].menuitems[mitems].modifiers.categories[o1].name+'</u></p></div>';
-         //modifiersbodyid.innerHTML +='<p>';
+
          for(var o2 in JSON.categories[cat].menuitems[mitems].modifiers.categories[o1].modifiers){
-           modifiersbodyid.innerHTML +='<div class="col-xs-4 col-md-4"><div class=" form-group "><input type="checkbox" name="fancy-checkbox-warning" id="fancy-checkbox-warning\''+o1+o2+'\'" autocomplete="off" /><div class="[ btn-group ]"><label for="fancy-checkbox-warning\''+o1+o2+'\'" class="[ btn btn-warning ]"><span class="[ glyphicon glyphicon-ok ]"></span>  <span> </span></label><label for="fancy-checkbox-warning\''+o1+o2+'\'" class="[ btn btn-default active ]">'+JSON.categories[cat].menuitems[mitems].modifiers.categories[o1].modifiers[o2].name+'</label></div></div></div></div>';
-           //'<div class="input-group"><span class="input-group-addon"><input type="checkbox" aria-label="'+JSON.categories[cat].menuitems[mitems].modifiers.categories[o1].modifiers[o2].name+'"></div>';
-           //<button type="button" class="btn btn-primary">'+JSON.categories[cat].menuitems[mitems].modifiers.categories[o1].modifiers[o2].name+'</button>';
+           modifiersbodyid.innerHTML +='<div class="col-xs-4 col-md-4"><div class=" form-group "><input type="checkbox" name="fancy-checkbox-warning" id="fancy-checkbox-warning\''+o1+o2+'\'" autocomplete="off" onclick="extras('+cat+','+mitems+','+o1+','+o2+')" /><div class="[ btn-group ]"><label for="fancy-checkbox-warning\''+o1+o2+'\'" class="[ btn btn-warning ]"><span class="[ glyphicon glyphicon-ok ]"></span>  <span> </span></label><label for="fancy-checkbox-warning\''+o1+o2+'\'" class="[ btn btn-default active ]">'+JSON.categories[cat].menuitems[mitems].modifiers.categories[o1].modifiers[o2].name+'</label></div></div></div></div>';
          }
-         //modifiersbodyid.innerHTML+='</p>';
+       }
+       modifiersfooterid.innerHTML= '<Button id="btnAddOrder" onclick="order('+cat+','+mitems+')">add to order</Button>'
       }
     }
 
-
+    function extras(cat,mitems,o1,o2){
+      if(array.indexOf(JSON.categories[cat].menuitems[mitems].modifiers.categories[o1].modifiers[o2].name)>-1){
+        var i = array.indexOf(JSON.categories[cat].menuitems[mitems].modifiers.categories[o1].modifiers[o2].name);
+        array.splice(i,1);
+      }else{
+        array.push(JSON.categories[cat].menuitems[mitems].modifiers.categories[o1].modifiers[o2].name);
+      }
+    }
+    function close1(i,value1){
+      $('#close1'+i).parent().parent().remove();
+      value-=parseFloat(value1);
+      valueid.innerHTML=value.toFixed(2);
+    }
+    function order(cat,mitems){
+       var extras = "<lu id="+i+"><li>"+JSON.categories[cat].menuitems[mitems].name+"<div class = left>"+JSON.categories[cat].menuitems[mitems].price+"&#8364;</div><div class = close1 id=close1"+i+" onclick=\"close1("+i+","+JSON.categories[cat].menuitems[mitems].price+")\"><a href=#>x</a></div></li>";
+       i++;
+       var len=array.length;
+      for(var i=0;i<len; i++){
+          extras+="<li class=extra><p>[+]"+array[i]+"</p></li>";
+       }
+       extras+="<hr></lu>";
+       $(cachierBody).append(extras);
+       value+=parseFloat(JSON.categories[cat].menuitems[mitems].price);
+       valueid.innerHTML=value.toFixed(2);
+       modal.style.display = "none";
+     }
 
    </script>
-
 </head>
 
 <body>
@@ -106,12 +132,21 @@
   </nav>
 
 <div class="container col-md-12">
-  <div  class="col-xs-4 col-md-4">
+  <div  class="col-xs-3 col-md-3">
     <ul class="nav nav-pills nav-stacked" id='categories'></ul>
   </div>
-
-  <div class="col-xs-8 col-sm-6 col-md-8">
+  <div class="col-xs-6 col-sm-6 col-md-6">
     <p id="menuitems"></p>
+  </div>
+  <div class="col-xs-3 col-md-3">
+    <div class="cachier" id="cachier">
+      <h2 class="center"><strong>Order</strong></h2>
+      <div class="cachierBody" id="cachierBody">
+      </div>
+      <div class"cachierEnd" id="cachierEnd">
+        <span class="right">Value</span><span class="left" id="valueid"></span>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -128,24 +163,23 @@
 <form class= "form-inline" id="modifiersbodyid">
 </form>
     </div>
-    <div class="modifiers-footer">
-      <Button id="btnAddOrder">add to order</Button>
+    <div class="modifiers-footer" id="modifiersfooterid">
     </div>
   </div>
-
 </div>
-
 <script>
 // Get the modal
 var modal = document.getElementById('modifiersid');
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
-
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
     modal.style.display = "none";
 }
+
+
+
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
@@ -158,7 +192,6 @@ window.onclick = function(event) {
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
-
 
 </body>
 </html>
