@@ -6,10 +6,6 @@
 
 
   <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
-  <?php
-    $str = file_get_contents('https://api.foody.com.cy/branch/multimenu/13?auth=c237b4132fff95103441b7231417f7bf39de9e04&skey=SKEY_5823119c798fd&XDEBUG_SESSION_START=PHPSTORM');
-    $json = json_decode($str,true);
-   ?>
    <link rel="stylesheet" href="css/style.css">
 
    <script type="text/javascript">
@@ -28,7 +24,7 @@
     };
     xhr.send();
     };
-    getJSON("https://api.foody.com.cy/branch/multimenu/13?auth=c237b4132fff95103441b7231417f7bf39de9e04&skey=SKEY_5823119c798fd&XDEBUG_SESSION_START=PHPSTORM",
+    getJSON("https://api.foody.com.cy/branch/multimenu/283?auth=be0eeec6e79c85f1f89318afc8ca6dec58c1a07e&skey=SKEY_58270ce872c1c&XDEBUG_SESSION_START=PHPSTORM",
       function(err, data) {
         if (err != null) {
           alert("Something went wrong: " + err);
