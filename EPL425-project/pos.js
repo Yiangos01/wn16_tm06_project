@@ -1,8 +1,9 @@
 
-    var array=[];
+   var array=[];
    var JSON;
    var i=0;
    var value=0;
+   var cardOrder=[];
    var getJSON = function(url, callback) {
     var xhr = new XMLHttpRequest();
     xhr.open("get", url, true);
@@ -17,7 +18,7 @@
     };
     xhr.send();
     };
-    getJSON("https://api.foody.com.cy/branch/multimenu/180?auth=edf47d533e03ca02da8ed643224104df471fec13&skey=SKEY_5830413d2211d&XDEBUG_SESSION_START=PHPSTORM",
+    getJSON("https://api.foody.com.cy/branch/multimenu/180?auth=b7104d36433c53ab2b45e287d055b5deb1cb4a50&skey=SKEY_5830cbccaedca&XDEBUG_SESSION_START=PHPSTORM",
       function(err, data) {
         if (err != null) {
           alert("Something went wrong: " + err);
@@ -65,13 +66,16 @@
         array.push(JSON.categories[cat].menuitems[mitems].modifiers.categories[o1].modifiers[o2].name);
       }
     }
-    function close1(i,value1){
+    function close1(i,value1,id){
       $('#close1'+i).parent().remove();
       value-=parseFloat(value1);
+      var i = cardOrder.indexOf(id);
+      cardOrder.splice(i,1);
       valueid.innerHTML=value.toFixed(2);
     }
     function order(cat,mitems){
-       var extras = "<lu id="+i+"><div class = close1 id=close1"+i+" onclick=\"close1("+i+","+JSON.categories[cat].menuitems[mitems].price+")\"><a href=#>x</a></div><li>"+JSON.categories[cat].menuitems[mitems].name+"<div class = left>"+JSON.categories[cat].menuitems[mitems].price+"&#8364;</div></li>";
+      cardOrder.push(JSON.categories[cat].menuitems[mitems].id);
+       var extras = "<lu id="+i+"><div class = close1 id=close1"+i+" onclick=\"close1("+i+","+JSON.categories[cat].menuitems[mitems].price+","+JSON.categories[cat].menuitems[mitems].id+")\"><a href=#>x</a></div><li>"+JSON.categories[cat].menuitems[mitems].name+"<div class = left>"+JSON.categories[cat].menuitems[mitems].price+"&#8364;</div></li>";
        i++;
        var len=array.length;
       for(var i=0;i<len; i++){
@@ -82,4 +86,9 @@
        value+=parseFloat(JSON.categories[cat].menuitems[mitems].price);
        valueid.innerHTML=value.toFixed(2);
        modal.style.display = "none";
+     }
+     function makeOrder(){
+       param1.innerHTML = cardOrder;
+        window.alert(5+6);
+        cardOrder=[];
      }
