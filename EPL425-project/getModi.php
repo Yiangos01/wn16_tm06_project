@@ -12,6 +12,7 @@ var array=[];
 var JSON;
 var i=0;
 var value=0;
+var val=[];
 var getJSON = function(url, callback) {
 var xhr = new XMLHttpRequest();
 xhr.open("get", url, true);
@@ -38,7 +39,10 @@ getJSON("https://api.foody.com.cy/branch/multimenu/180?auth=b7104d36433c53ab2b45
         for(var o2 in data.categories[obj].menuitems){
           for(var o3 in data.categories[obj].menuitems[o2].modifiers.categories){
             for(var o4 in data.categories[obj].menuitems[o2].modifiers.categories[o3].modifiers){
-              items.innerHTML +='<p>' + data.categories[obj].menuitems[o2].modifiers.categories[o3].modifiers[o4].name+" : "+data.categories[obj].menuitems[o2].modifiers.categories[o3].modifiers[o4].id+'</p>';
+              if(val.indexOf(data.categories[obj].menuitems[o2].modifiers.categories[o3].modifiers[o4].id)>-1){
+              }else{  val.push( data.categories[obj].menuitems[o2].modifiers.categories[o3].modifiers[o4].id);
+                items.innerHTML +='<p>INSERT INTO `modifiesitems` (`id`, `name`) VALUES (\'' + data.categories[obj].menuitems[o2].modifiers.categories[o3].modifiers[o4].id+"' , '"+data.categories[obj].menuitems[o2].modifiers.categories[o3].modifiers[o4].name+'\');</p>';
+      }
       }
       }
       }

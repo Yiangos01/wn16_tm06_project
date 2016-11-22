@@ -36,7 +36,7 @@ getJSON("https://api.foody.com.cy/branch/multimenu/180?auth=b7104d36433c53ab2b45
       //test.innerHTML=data.categories[0].name;
       for(var obj in data.categories){
         for(var o2 in data.categories[obj].menuitems){
-        items.innerHTML +='<p>INSERT INTO \'items\'(\'id\',\'name\') VALUES (\'' + JSON.categories[obj].menuitems[o2].id+"\' , \'"+JSON.categories[obj].menuitems[o2].name +'\')</p>';
+        items.innerHTML +='<p>INSERT INTO `items` (`id`, `name`) VALUES (\'' + JSON.categories[obj].menuitems[o2].id+"\' , \'"+JSON.categories[obj].menuitems[o2].name +'\');</p>';
       }
       }
       //menu(data.categories[obj])
