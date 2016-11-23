@@ -1,6 +1,9 @@
 
 html, body, #container{
-    height: 100%;
+    height: auto;
+    width: auto;
+    font-size: auto;
+
 }
 input:checked + div #btn{
   background-color: grey;
@@ -14,11 +17,13 @@ input[type=radio] {
   float: left;
 }
 #btn{
-  margin:1%;
   height: auto;
   width: auto;
+  font-size: auto;
   background-color: #8FBC8F;
   overflow: hidden;
+  margin: 1%;
+  padding: 1%;
 }
 #btnAddOrder{
   margin: 1% 1% 1% 90%;
@@ -101,9 +106,10 @@ row{
 }
 
 .modifiers-header {
-    top=0;
     background-color: black;
     color: white;
+    height: 100%;
+    width: 100%;
 }
 
 .modifiers-body {\
@@ -162,4 +168,15 @@ h2.center{
 }
 .right{
   margin-left: 5%;
+}
+#type {
+margin: 0%;
+padding: 0%;
+}
+.col-xs-4{
+  overflow: hidden;
+  padding: 0%;
+}
+.btn-group{
+  align-self: center;
 }
