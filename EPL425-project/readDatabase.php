@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<body>
+<head>
 
 <?php
 $servername = "localhost";
@@ -30,5 +30,7 @@ if ($result->num_rows > 0) {
 $conn->close();
 ?>
 
+</head>
+<body>
 </body>
 </html>

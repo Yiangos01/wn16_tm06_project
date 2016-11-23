@@ -53,7 +53,7 @@
       <div class="cachierEnd" id="cachierEnd">
         <span class="right">Value</span><span class="left" id="valueid"></span>
       </div>
-      <div class="makeOrder" ><button class="btn btn-success" id="center" onclick="makeOrder()">Make the order</button></div>
+      <div class="makeOrder" ><button class="btn btn-success" id="center" >Make the order</button></div>
     </div>
     <div ><p id="param1">asdasdsa</p></div>
   </div>
