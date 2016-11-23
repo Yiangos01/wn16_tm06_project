@@ -18,7 +18,7 @@
     };
     xhr.send();
     };
-    getJSON("https://api.foody.com.cy/branch/multimenu/180?auth=b7104d36433c53ab2b45e287d055b5deb1cb4a50&skey=SKEY_5830cbccaedca&XDEBUG_SESSION_START=PHPSTORM",
+    getJSON("https://api.foody.com.cy/branch/multimenu/180?auth=12e58d07aa03d08e6db684049f6aee2c006175fb&skey=SKEY_58331b0a40654&XDEBUG_SESSION_START=PHPSTORM",
       function(err, data) {
         if (err != null) {
           alert("Something went wrong: " + err);
@@ -91,4 +91,5 @@
        param1.innerHTML = cardOrder;
         window.alert(5+6);
         cardOrder=[];
+        
      }
