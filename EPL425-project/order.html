@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 
   <link rel="stylesheet" href="css/order.css">
-
+ <script type="text/javascript" src="order.js"> </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 
 </head>
@@ -25,58 +25,11 @@
       <th>Actions</th>
     </tr>
   </thead>
-  <tbody>
-    <tr>
-      <td><strong>showSpeed</strong></td>
-      <td>15</td>
-      <td>The speed of the show/reveal</td>
-      <td>The speed of the show/reveal</td>
-      <td><strong>showSpeed</strong></td>
-      <td>15</td>
-      <td>The speed of the show/reveal</td>
-    </tr>
-    <tr>
-      <td><strong>showEasing</strong></td>
-      <td>'linear'</td>
-      <td>The easing of the show/reveal</td>
-    </tr>
-    <tr>
-      <td><strong>hideSpeed</strong></td>
-      <td>50</td>
-      <td>The speed of the hide/conceal</td>
-    </tr>
-    <tr>
-      <td><strong>hideEasing</strong></td>
-      <td>'linear'</td>
-      <td>The easing of the hide/conceal</td>
-    </tr>
-    <tr>
-      <td><strong>width</strong></td>
-      <td>'auto'</td>
-      <td>The width that the data will be truncated to - <em>('auto' or px amount)</em></td>
-    </tr>
-    <tr>
-      <td><strong>ellipsis</strong></td>
-      <td>true</td>
-      <td>Set to true to enable the ellipsis</td>
-    </tr>
-    <tr>
-      <td><strong>title</strong></td>
-      <td>false</td>
-      <td>Set to true to show the full data on hover</td>
-    </tr>
-    <tr>
-      <td><strong>afterShow</strong></td>
-      <td> $.noop</td>
-      <td>The callback fired after the show/reveal</td>
-    </tr>
-    <tr>
-      <td><strong>afterHide</strong></td>
-      <td>$.noop</td>
-      <td>The callback fired after the hide/conceal</td>
-    </tr>
+  <tbody id="tablebody">
+
   </tbody>
 </table>
+<button id="testbtn">test</button>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
     <script src="js/index.js"></script>
