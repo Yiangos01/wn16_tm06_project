@@ -1,7 +1,7 @@
 
    var array=[];
    var JSON;
-   var i=0;
+   var k=0;
    var value=0;
    var cardOrder=[];
    var orderid=0;
@@ -65,9 +65,10 @@
      }else{
        array.push(JSON.categories[cat].menuitems[mitems].name);
        cardOrder.push({'id':JSON.categories[cat].menuitems[mitems].id});
-       $(cachierBody).append("<lu id="+i+"><div class = close1 id=close1"+i+" onclick=close1("+i+","+JSON.categories[cat].menuitems[mitems].price+","+JSON.categories[cat].menuitems[mitems].id+")><a href=#>x</a></div><li>"+JSON.categories[cat].menuitems[mitems].name+"<div class = left>"+JSON.categories[cat].menuitems[mitems].price+"&#8364;</div></li></lu><hr>");
+       $(cachierBody).append("<lu id="+k+"><div class = close1 id=close1"+k+" onclick=close1("+k+","+JSON.categories[cat].menuitems[mitems].price+","+JSON.categories[cat].menuitems[mitems].id+")><a href=#>x</a></div><li>"+JSON.categories[cat].menuitems[mitems].name+"<div class = left>"+JSON.categories[cat].menuitems[mitems].price+"&#8364;</div></li><hr>");
        value+=parseFloat(JSON.categories[cat].menuitems[mitems].price);
        valueid.innerHTML=value.toFixed(2);
+       k++;
      }
     }
     function extras(cat,mitems,o1,o2){
@@ -87,8 +88,8 @@
     }
     function order(cat,mitems){
       cardOrder.push({'id':JSON.categories[cat].menuitems[mitems].id});
-      var extras = "<lu id="+i+"><div class = close1 id=close1"+i+" onclick=\"close1("+i+","+JSON.categories[cat].menuitems[mitems].price+","+JSON.categories[cat].menuitems[mitems].id+")\"><a href=#>x</a></div><li>"+JSON.categories[cat].menuitems[mitems].name+"<div class = left>"+JSON.categories[cat].menuitems[mitems].price+"&#8364;</div></li>";
-      i++;
+      var extras = "<lu id="+k+"><div class = close1 id=close1"+k+" onclick=\"close1("+k+","+JSON.categories[cat].menuitems[mitems].price+","+JSON.categories[cat].menuitems[mitems].id+")\"><a href=#>x</a></div><li>"+JSON.categories[cat].menuitems[mitems].name+"<div class = left>"+JSON.categories[cat].menuitems[mitems].price+"&#8364;</div></li>";
+      k++;
       var len=array.length;
       for(var i=0;i<len; i++){
           extras+='<li class="extra">[+]'+array[i]+'</li>';
