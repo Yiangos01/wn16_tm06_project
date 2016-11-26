@@ -1,10 +1,21 @@
 
 <?php
+
+/*
+status:
+0 in Progress
+1 cancelled
+2 Ready
+3 Finished
+4 Paid */
+
 $servername = "localhost";
-$username = "root";
+$username = $_POST['username'];;
 $password = "";
 $dbname = "pos";
-$Result = "";
+$aResult = array();
+$aStatus =  array("in Progress", "Cancelled", "Ready", "Finished", "Paid");
+$atype =  array("Delivery","Dine in","Take away");
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
@@ -18,13 +29,14 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
      // output data of each row
      while($row = $result->fetch_assoc()) {
-         $Result += "<br> id: ". $row["id"]. " - Time: ". $row["time"]. " Date:" . $row["date"] . " CustomerId: ". $row["customerId"] . "<br>";
+       array_push($aResult, "<tr><td><strong>".$row["id"] ."</strong></td> <td>". $atype[$row["type"]]. "</td> <td>".$row["date"]."</td><td>".$row["customerId"]."</td><td>".$row["total"]."</td><td>".$aStatus[$row["status"]]."</td><td><button >View order</button></td></tr>");
+
+      # $AResult =  "<br> id: ". $row["id"]. " - Time: ". $row["time"]. " Date:" . $row["date"] . " CustomerId: ". $row["customerId"] . "<br>";
      }
 } else {
      echo "0 results";
 }
-
-echo json_encode($Result);
+echo implode(" ",$aResult);
 
 $conn->close();
 ?>
