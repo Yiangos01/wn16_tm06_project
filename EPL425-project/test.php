@@ -1,5 +1,5 @@
 <?php
-    /*header('Content-Type: application/json');
+    header('Content-Type: application/json');
 
     $aResult = array();
 
@@ -26,7 +26,7 @@
 
     }
 
-    echo json_encode($aResult);*/
+    echo json_encode($aResult);
     
       echo 'hello world!';
 
