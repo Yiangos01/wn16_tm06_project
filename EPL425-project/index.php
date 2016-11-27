@@ -7,7 +7,6 @@
 
   <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
    <link rel="stylesheet" href="css/style.css">
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/json2/20160511/json2.js"></script>
    <script type="text/javascript" src="pos.js"> </script>
 
 
@@ -20,13 +19,13 @@
     <nav id="side">
             <ul >
               <hr>
-                <li class="navi"> <a href="#home" class="" >menu</a>
+                <li id="navi" > <a href="#home" class="" >menu</a>
                 </li>
                 <hr>
-                <li class="navi"> <a href="#anch1" data-scroll="" class="">all orders</a>
+                <li id="navi" > <a href="" data-scroll="" class="">orders</a>
                 </li>
                 <hr>
-                <li class="navi"> <a href="#anch1" data-scroll="" class="">new client</a>
+                <li id="navi" > <a href="newClient.php" data-scroll="" class="">clients</a>
                 </li>
                 <hr>
             </ul>
@@ -40,6 +39,10 @@
     <p id="menuitems"></p>
   </div>
   <div class="col-xs-4 col-sm-3 col-md-3">
+
+     Tel: <input type="text" name="tele" id="tel">
+     <button id="checkbtn" onclick="checktel()">Valid?</button>
+
     <form id="type">
   <div class="btn-group-sm" data-toggle="buttons">
     <label class="btn btn-primary active">

@@ -19,7 +19,7 @@
     };
     xhr.send();
     };
-    getJSON("https://api.foody.com.cy/branch/multimenu/180?auth=70705b55eca83a5451e59065e4c63f6e6689a662&skey=SKEY_583970106246b&XDEBUG_SESSION_START=PHPSTORM",
+    getJSON("https://api.foody.com.cy/branch/multimenu/180?auth=58e286a49b98c4314ac75888f558a763b4c3d8d5&skey=SKEY_583a107bc9145&XDEBUG_SESSION_START=PHPSTORM",
 
       function(err, data) {
         if (err != null) {
@@ -105,6 +105,8 @@
        document.getElementById("center").onclick=Ordermade;
      }
      function Ordermade(){
+       var tel = $('input[name=tele]').val();
+       $('input[name=tele]').val("");
        var type=$('input[name=options]:checked').val();
       if(type=="delivery"){
          type=0;
@@ -114,13 +116,12 @@
         type=2;
        }
        var total=valueid.innerHTML;
-       var cust=1;
        var function1='order';
        $.ajax({
          url:"databasetest.php",
          data:{
+           tel:tel,
            function1:function1,
-           customer:cust,
            type:type,
            total:total,
          },
@@ -151,6 +152,20 @@ function items(){
         cardOrder=[];
         cachierBody.innerHTML='';
         valueid.innerHTML=0;
-
        }
-      window.onload = makeOrder;
+ function checktel(){
+   function1="telephone";
+   var tel = $('input[name=tele]').val();
+   $.ajax({
+     url:"databasetest.php",
+     data:{
+       function1:function1,
+       tel:tel
+     },
+     type:"POST",
+     success: function(data) {
+       alert(data);
+     }
+   });
+ }
+window.onload = makeOrder;
