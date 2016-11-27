@@ -22,7 +22,7 @@
                 <li id="navi" > <a href="#home" class="" >menu</a>
                 </li>
                 <hr>
-                <li id="navi" > <a href="" data-scroll="" class="">orders</a>
+                <li id="navi" > <a href="order.html" data-scroll="" class="">orders</a>
                 </li>
                 <hr>
                 <li id="navi" > <a href="newClient.php" data-scroll="" class="">clients</a>

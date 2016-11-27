@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html>
-<head>
-=======
->>>>>>> order
 
 <?php
 
@@ -47,11 +41,3 @@ echo implode(" ",$aResult);
 
 $conn->close();
 ?>
-<<<<<<< HEAD
-
-</head>
-<body>
-</body>
-</html>
-=======
->>>>>>> order
