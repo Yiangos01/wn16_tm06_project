@@ -157,14 +157,18 @@ input[type=radio]:checked + label{
     text-decoration: none;
     cursor: pointer;
 }
-</style>
-
-/*tbody:hover td {
-	color: transparent;
-	text-shadow: 0 0 3px #aaa;
+#gray{
+  background-color: #DEB312;
 }
-
-tbody:hover tr:hover td {
-	color: #444;
-	text-shadow: 0 1px 0 #fff;
-}*/
+#red{
+  background-color: #FF0000;
+}
+#orange{
+  background-color: #FFA500;
+}
+#Dark{
+  background-color: #C0C0C0;
+}
+#green{
+  background-color: #2E8B57;
+}

@@ -7,14 +7,30 @@
   <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
    <link rel="stylesheet" href="css/style.css">
    <script type="text/javascript" src="pos.js"> </script>
+   <link href="css/simple-sidebar.css" rel="stylesheet">
 
 
 </head>
 <body>
+<div id="wrapper">
 <form class="form-horizontal" action="client.php" method="post">
 <fieldset>
+  <div id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+          <li>
+              <a href="index.php" class="" >menu</a>
+          </li>
+          <li>
+              <a href="order.html" data-scroll="" class="">orders</a>
+          </li>
+          <li>
+              <a href="newClient.php" data-scroll="" class="">clients</a>
+          </li>
 
-<legend>New Client</legend>
+      </ul>
+  </div>
+<div id="page-content-wrapper">
+<legend id="new">New Client</legend>
 
 <div class="form-group">
   <label class="col-md-4 control-label" for="name">Name</label>
@@ -57,8 +73,7 @@
 
 </fieldset>
 </form>
- <div class="col-md-4">
-   <a href="index.php" class="btn btn-primary">Back to main menu</a>
- </div>
+</div>
+</div>
 </body>
 </html>

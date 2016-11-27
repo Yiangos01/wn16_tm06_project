@@ -38,6 +38,9 @@ body{
   margin-left:  -3%;
   margin-top: -3%;
 }
+#new{
+  margin: 1%;
+}
 #navi a{
   color:gray;
   text-align:center;
@@ -65,20 +68,30 @@ input[type=radio] {
     opacity: 0;
     margin= 0%;
 }
-
 #left{
   height: 95%;
   float: left;
 }
+#modalhead{
+  text-align: center;
+
+}
+input[name="fancy-checkbox-warning"] label{
+  text-align: center;
+}
+input[name="fancy-checkbox-warning"] {
+  opacity: 0;
+}
 #btn{
-  height: auto;
-  width: auto;
+  height: 5em;
+  width: 100%;
   font-size: auto;
   background-color: gray;
   color: white;
   overflow: hidden;
   margin: 1%;
   padding: 1%;
+  text-align: center;
 }
 #btnAddOrder{
   margin: 1% 1% 1% 90%;
@@ -113,7 +126,7 @@ row{
 }
 .modifiers-content {
     position: relative;
-    background-color: #e6f2ff;
+    background-color: #F0FFF0 ;
     margin: auto;
     padding: 0;
     border: 1px solid #888;
@@ -164,6 +177,7 @@ row{
     color: white;
     height: 100%;
     width: 100%;
+    margin-top: -2%;
 }
 
 .modifiers-body {\
@@ -237,4 +251,8 @@ padding: 0%;
 }
 #tel{
   margin:2px;
+}
+.arraybtn{
+  height: 70%;
+  width:90%;
 }
