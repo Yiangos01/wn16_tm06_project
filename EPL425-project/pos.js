@@ -58,7 +58,7 @@
       for(var o1 in JSON.categories[cat].menuitems[mitems].modifiers.categories){
          modifiersbodyid.innerHTML +='<div class="col-xs-12 col-md-12"<p><u>'+JSON.categories[cat].menuitems[mitems].modifiers.categories[o1].name+'</u></p></div>';
          for(var o2 in JSON.categories[cat].menuitems[mitems].modifiers.categories[o1].modifiers){
-           modifiersbodyid.innerHTML +='<div class="col-xs-2 col-md-2"><div class=" form-group "><input type="checkbox" name="fancy-checkbox-warning" id="fancy-checkbox-warning\''+o1+o2+'\'" autocomplete="off" onclick="extras('+cat+','+mitems+','+o1+','+o2+')" /><div><label for="fancy-checkbox-warning\''+o1+o2+'\'" id="btn" class=" btn ">'+JSON.categories[cat].menuitems[mitems].modifiers.categories[o1].modifiers[o2].name+'</label></div></div></div>';
+           modifiersbodyid.innerHTML +='<div class="col-xs-2 col-md-2"><div class=" form-group "><input type="checkbox" name="fancy-checkbox-warning" id="fancy-checkbox-warning\''+o1+o2+'\'" autocomplete="off" onclick="extras('+cat+','+mitems+','+o1+','+o2+')" /><div><label for="fancy-checkbox-warning\''+o1+o2+'\'" id="btn" class=" btn">'+JSON.categories[cat].menuitems[mitems].modifiers.categories[o1].modifiers[o2].name+'</label></div></div></div>';
          }
        }
        modifiersfooterid.innerHTML= '<Button id="btnAddOrder" onclick="order('+cat+','+mitems+')">add to order</Button>'
@@ -84,7 +84,7 @@
       value-=parseFloat(value1);
       var i = cardOrder.indexOf(id);
       cardOrder.splice(i,1);
-      valueid.innerHTML=value.toFixed(2);
+      valueid.innerHTML=value.toFixed(2)+" &#8364;";
     }
     function order(cat,mitems){
       cardOrder.push({'id':JSON.categories[cat].menuitems[mitems].id});
@@ -105,9 +105,12 @@
        document.getElementById("center").onclick=Ordermade;
      }
      function Ordermade(){
-       var tel = $('input[name=tele]').val();
-       $('input[name=tele]').val("");
+       var tel=$('input[name=tele]').val();
        var type=$('input[name=options]:checked').val();
+       if(tel==="" && type==="delivery"){
+         alert("give a phone number");
+       }else{
+       $('input[name=tele]').val("");
       if(type=="delivery"){
          type=0;
        }else if (type=="dinein") {
@@ -132,6 +135,7 @@
          }
        })
      }
+   }
 function items(){
       var function1='item';
       for(var i=0;i<cardOrder.length;i++){

@@ -49,13 +49,14 @@ body{
   padding: 0%;
 }
 input:checked + div #btn{
-  background-color: white;
-  color:gray;
+  background-color: green;
+  color:white;
 }
 input[type=radio] {
     opacity: 0;
-    margin= 0px;
+    margin= 0%;
 }
+
 #left{
   height: 95%;
   float: left;
@@ -98,6 +99,9 @@ row{
 }
 
 /* Modal Content */
+.col-xs-2.col-md-2{
+  overflow: hidden;
+}
 .modifiers-content {
     position: relative;
     background-color: #e6f2ff;
@@ -156,6 +160,7 @@ row{
 .modifiers-body {\
     height: auto;
     width: auto;
+    overflow: hidden;
 }
 
 .modifiers-footer {
