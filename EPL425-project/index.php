@@ -3,7 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>POS inteface</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
+
+  <!-- Custom CSS -->
+  <link href="css/simple-sidebar.css" rel="stylesheet">
 
   <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
    <link rel="stylesheet" href="css/style.css">
@@ -13,25 +20,27 @@
 </head>
 
 <body>
-
+<div id="wrapper">
 <div class="container col-md-12">
   <div class="col-xs-1 col-sm-1 col-md-1">
-    <nav id="side">
-            <ul >
-              <hr>
-                <li id="navi" > <a href="#home" class="" >menu</a>
-                </li>
-                <hr>
-                <li id="navi" > <a href="order.html" data-scroll="" class="">orders</a>
-                </li>
-                <hr>
-                <li id="navi" > <a href="newClient.php" data-scroll="" class="">clients</a>
-                </li>
-                <hr>
-            </ul>
-        </nav>
-  </div>
+  <!-- Sidebar -->
+  <div id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+          <li class="sidebar-brand">
+              <a href="#home" class="" >menu</a>
+          </li>
+          <li>
+              <a href="order.html" data-scroll="" class="">orders</a>
+          </li>
+          <li>
+              <a href="newClient.php" data-scroll="" class="">clients</a>
+          </li>
 
+      </ul>
+  </div>
+</div>
+
+  <div id="page-content-wrapper">
   <div  class="col-xs-2 col-sm-2 col-md-2">
     <ul class="nav nav-pills nav-stacked" id='categories'></ul>
   </div>
@@ -69,9 +78,9 @@
       <div class="makeOrder" ><button class="btn btn-success" id="center" >Make the order</button></div>
     </div>
   </div>
-
 </div>
-
+</div>
+</div>
 <!-- Popup modifiers -->
 <div id="modifiersid" class="modifiersClass">
   <!-- Modal content -->
