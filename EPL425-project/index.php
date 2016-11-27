@@ -4,18 +4,16 @@
   <meta charset="UTF-8">
   <title>POS inteface</title>
 
-
   <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
    <link rel="stylesheet" href="css/style.css">
    <script type="text/javascript" src="pos.js"> </script>
-
 
 </head>
 
 <body>
 
 <div class="container col-md-12">
-  <div class="col-xs-1 col-sm-1 col-md-1">
+
     <nav id="side">
             <ul >
               <hr>
@@ -30,12 +28,11 @@
                 <hr>
             </ul>
         </nav>
-  </div>
 
   <div  class="col-xs-2 col-sm-2 col-md-2">
     <ul class="nav nav-pills nav-stacked" id='categories'></ul>
   </div>
-  <div class="col-xs-5 col-sm-6 col-md-6">
+  <div class="col-xs-6 col-sm-7 col-md-7">
     <p id="menuitems"></p>
   </div>
   <div class="col-xs-4 col-sm-3 col-md-3">

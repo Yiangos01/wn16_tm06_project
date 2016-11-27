@@ -22,12 +22,16 @@ body{
   color: white;
 }
 #side{
-  height: 42em;
-  margin: 0%;
+  position: fixed;;
+  top=0;
+  left=0;
   background: #000;
   color:white;
+  height: 110%;
+  float: left;
   overflow-y: auto;
-  padding: 0%;
+  margin-left:  -3%;
+  margin-top: -3%;
 }
 #navi a{
   color:gray;
