@@ -13,7 +13,7 @@ $id = $_POST["id"];
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "pos";
+$dbname = "pos2";
 
 
 // Create connection

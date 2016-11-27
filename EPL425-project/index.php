@@ -8,20 +8,23 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
+<<<<<<< HEAD
 
   <!-- Custom CSS -->
   <link href="css/simple-sidebar.css" rel="stylesheet">
 
+=======
+>>>>>>> ffdfcfa53476d9bb3709d24590c650ad55e27763
   <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
    <link rel="stylesheet" href="css/style.css">
    <script type="text/javascript" src="pos.js"> </script>
-
 
 </head>
 
 <body>
 <div id="wrapper">
 <div class="container col-md-12">
+<<<<<<< HEAD
   <div class="col-xs-1 col-sm-1 col-md-1">
   <!-- Sidebar -->
   <div id="sidebar-wrapper">
@@ -39,12 +42,29 @@
       </ul>
   </div>
 </div>
+=======
+
+    <nav id="side">
+            <ul >
+              <hr>
+                <li id="navi" > <a href="#home" class="" >menu</a>
+                </li>
+                <hr>
+                <li id="navi" > <a href="order.html" data-scroll="" class="">orders</a>
+                </li>
+                <hr>
+                <li id="navi" > <a href="newClient.php" data-scroll="" class="">clients</a>
+                </li>
+                <hr>
+            </ul>
+        </nav>
+>>>>>>> ffdfcfa53476d9bb3709d24590c650ad55e27763
 
   <div id="page-content-wrapper">
   <div  class="col-xs-2 col-sm-2 col-md-2">
     <ul class="nav nav-pills nav-stacked" id='categories'></ul>
   </div>
-  <div class="col-xs-5 col-sm-6 col-md-6">
+  <div class="col-xs-6 col-sm-7 col-md-7">
     <p id="menuitems"></p>
   </div>
   <div class="col-xs-4 col-sm-3 col-md-3">

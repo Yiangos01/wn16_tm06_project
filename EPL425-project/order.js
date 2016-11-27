@@ -62,3 +62,17 @@ function submitt() {
             }
     });
 }
+function displayOrder(id){
+  function1='display';
+  $.ajax({
+    url:"databasetest.php",
+    data:{
+      id:id,
+      function1:function1
+    },
+    type:"POST",
+    success: function(data) {
+      alert(data);
+    }
+  })
+}

@@ -5,6 +5,7 @@ switch($_POST['function1']){
     case 'order': order(); break;
     case 'item': items(); break;
     case 'telephone': address();break;
+    case 'display': display();break;
     default: break;
 }
 
@@ -68,4 +69,18 @@ function address(){
 
 
 }
+  function display(){
+    $result=array();
+    $user='root';
+    $pass='';
+    $db='pos2';
+    $db=new mysqli('localhost',$user,$pass,$db) or die("Unable to connect");
+    $id = $_POST['id'];
+    $sql = "SELECT * FROM `orderitems` join `items` ON orderitems.itemid=items.id WHERE orderitems.orderid=$id";
+    $result2 = mysqli_query($db,$sql);
+    while($row=mysqli_fetch_array($result2)){
+      array_push($result,$row[3]."\n");
+    }
+    echo implode(" ",$result);
+  }
 ?>
