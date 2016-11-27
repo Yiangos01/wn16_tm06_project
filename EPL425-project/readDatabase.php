@@ -28,9 +28,10 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
      // output data of each row
+     $i=0;
      while($row = $result->fetch_assoc()) {
-       array_push($aResult, "<tr><td><strong>".$row["id"] ."</strong></td> <td>". $atype[$row["type"]]. "</td> <td>".$row["date"]."</td><td>".$row["customerId"]."</td><td>".$row["total"]."</td><td>".$aStatus[$row["status"]]."</td><td><button >View order</button></td></tr>");
-
+       array_push($aResult, "<tr><td><strong>".$row["id"] ."</strong></td> <td>". $atype[$row["type"]]. "</td> <td>".$row["date"]."</td><td>".$row["customerId"]."</td><td>".$row["total"]."</td><td><button onclick=\"stat(".$row["id"] .")\">".$aStatus[$row["status"]]."</button></td><td><button >View order</button></td></tr>");
+       $i++;
       # $AResult =  "<br> id: ". $row["id"]. " - Time: ". $row["time"]. " Date:" . $row["date"] . " CustomerId: ". $row["customerId"] . "<br>";
      }
 } else {
