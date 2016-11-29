@@ -19,7 +19,7 @@
     };
     xhr.send();
     };
-    getJSON("https://api.foody.com.cy/branch/multimenu/180?auth=84e17f065b9a42df73ab77e8517e1a4421ef407e&skey=SKEY_583b578f85846&XDEBUG_SESSION_START=PHPSTORM",
+    getJSON("menu.json",
 
       function(err, data) {
         if (err != null) {
@@ -56,9 +56,9 @@
       modifiersHeaderid.innerHTML = '<h2 id="modalhead">'+JSON.categories[cat].menuitems[mitems].name+'</h2>';
       modifiersbodyid.innerHTML= ' ';
       for(var o1 in JSON.categories[cat].menuitems[mitems].modifiers.categories){
-         modifiersbodyid.innerHTML +='<div class="col-xs-12 col-md-12"><p><u>'+JSON.categories[cat].menuitems[mitems].modifiers.categories[o1].name+'</u></p></div>';
+         modifiersbodyid.innerHTML +='<div class="col-xs-12 col-md-12"><u>'+JSON.categories[cat].menuitems[mitems].modifiers.categories[o1].name+'</u></div>';
          for(var o2 in JSON.categories[cat].menuitems[mitems].modifiers.categories[o1].modifiers){
-           modifiersbodyid.innerHTML +='<div class="col-xs-3 col-md-3"><input type="checkbox" name="fancy-checkbox-warning" id="fancy-checkbox-warning\''+o1+o2+'\'" autocomplete="off" onclick="extras('+cat+','+mitems+','+o1+','+o2+')"/><div><label for="fancy-checkbox-warning\''+o1+o2+'\'" id="btn" class=" btn">'+JSON.categories[cat].menuitems[mitems].modifiers.categories[o1].modifiers[o2].name+'</label></div></div>';
+           modifiersbodyid.innerHTML +='<div class="col-xs-2 col-md-2"><input type="checkbox" name="fancy-checkbox-warning" id="fancy-checkbox-warning\''+o1+o2+'\'" autocomplete="off" onclick="extras('+cat+','+mitems+','+o1+','+o2+')"/><div id="fancy"><label for="fancy-checkbox-warning\''+o1+o2+'\'" id="btn" class=" btn ">'+JSON.categories[cat].menuitems[mitems].modifiers.categories[o1].modifiers[o2].name+'</label></div></div>';
          }
        }
        modifiersfooterid.innerHTML= '<Button id="btnAddOrder" onclick="order('+cat+','+mitems+')">add to order</Button>'

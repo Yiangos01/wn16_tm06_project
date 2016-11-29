@@ -24,21 +24,22 @@ if ($conn->connect_error) {
      die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM `order`";
+$sql = "SELECT C.`id` as cid, C.`name`, C.`telephone`, C.`address`,O.`id`, O.`time`, O.`date`, O.`customerId`, O.`type`, O.`status`, O.`total` FROM `customer` C JOIN `order` O WHERE O.customerId=C.id Order BY O.id";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
      // output data of each row
      $i=0;
      while($row = $result->fetch_assoc()) {
-       array_push($aResult, "<tr><td><strong>".$row["id"] ."</strong></td> <td>". $atype[$row["type"]]. "</td> <td>".$row["date"]."</td><td>".$row["customerId"]."</td><td>".$row["total"]."</td><td><button class=\"arraybtn\" id=\"".$color[$row["status"]]."\" onclick=\"stat(".$row["id"].")\">".$aStatus[$row["status"]]."</button></td><td><button onclick=displayOrder(".$row["id"].") >View order</button></td></tr>");
+       array_push($aResult, "<tr><td><strong>".$row["id"] ."</strong></td> <td>". $atype[$row["type"]]. "</td> <td>".$row["date"]."</td><td>".$row["name"]."</td><td>".$row["total"]."&#8364;</td><td><button class=\"arraybtn\" id=\"".$color[$row["status"]]."\" onclick=\"stat(".$row["id"].")\">".$aStatus[$row["status"]]."</button></td><td><button onclick=displayOrder(".$row["id"].") >View order</button></td></tr>");
        $i++;
       # $AResult =  "<br> id: ". $row["id"]. " - Time: ". $row["time"]. " Date:" . $row["date"] . " CustomerId: ". $row["customerId"] . "<br>";
      }
 } else {
      echo "0 results";
 }
-echo implode(" ",$aResult);
+
+echo implode(" ",array_reverse($aResult));
 
 $conn->close();
 ?>

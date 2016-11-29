@@ -76,8 +76,8 @@ input[type=radio] {
   text-align: center;
 
 }
-input[name="fancy-checkbox-warning"] label{
-  text-align: center;
+#fancy label{
+  text-align:left;
 }
 input[name="fancy-checkbox-warning"] {
   opacity: 0;
@@ -254,5 +254,5 @@ padding: 0%;
 }
 .arraybtn{
   height: 70%;
-  width:90%;
+  width:95%;
 }
