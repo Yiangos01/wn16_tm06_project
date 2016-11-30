@@ -31,7 +31,9 @@
           <li>
               <a href="newClient.php" data-scroll="" class="">clients</a>
           </li>
-
+          <li>
+              <a href="map.html" data-scroll="" class="">map</a>
+          </li>
       </ul>
   </div>
 </div>
