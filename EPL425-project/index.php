@@ -50,10 +50,10 @@
 
     <form id="type">
   <div class="btn-group-sm" data-toggle="buttons">
-    <label class="btn btn-primary active">
-        <input class="type" type="radio" name="options" id="delivery" value="delivery" autocomplete="off" checked> delivery
+    <label class="btn btn-primary ">
+        <input class="type" type="radio" name="options" id="delivery" value="delivery" autocomplete="off" > delivery
     </label>
-    <label class="btn btn-primary">
+    <label class="btn btn-primary active">
       <input  class="type" type="radio" name="options" id="dinein" value="dinein" autocomplete="off"> dine in
     </label>
     <label class="btn btn-primary">

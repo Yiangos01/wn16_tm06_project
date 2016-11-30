@@ -19,7 +19,7 @@
     };
     xhr.send();
     };
-    getJSON("https://api.foody.com.cy/branch/multimenu/180?auth=58e286a49b98c4314ac75888f558a763b4c3d8d5&skey=SKEY_583a107bc9145&XDEBUG_SESSION_START=PHPSTORM",
+    getJSON("menu.json",
 
       function(err, data) {
         if (err != null) {
@@ -43,7 +43,7 @@
       menuitems.innerHTML ="";
       for(var obj in JSON.categories[cat].menuitems){
         if(JSON.categories[cat].menuitems[obj].name !== '' && JSON.categories[cat].menuitems[obj].name !== null){
-        menuitems.innerHTML += '<button id="btn" type="button" class=\"btn btn-default \" onclick="modifiers('+cat+','+obj+')" >'+ JSON.categories[cat].menuitems[obj].name + '</button>';
+        menuitems.innerHTML += '<div class=\"col-xs-4 col-sm-4 col-md-4\"><button id="btn" type="button" class=\"btn btn-default \" onclick="modifiers('+cat+','+obj+')" >'+ JSON.categories[cat].menuitems[obj].name + '</button></div>';
       }
       }
     }
@@ -53,12 +53,12 @@
       array=[];
       if(JSON.categories[cat].menuitems[mitems].modifiers.hasmodifiers){
       modal.style.display = "block";
-      modifiersHeaderid.innerHTML = '<h2>'+JSON.categories[cat].menuitems[mitems].name+'</h2>';
+      modifiersHeaderid.innerHTML = '<h2 id="modalhead">'+JSON.categories[cat].menuitems[mitems].name+'</h2>';
       modifiersbodyid.innerHTML= ' ';
       for(var o1 in JSON.categories[cat].menuitems[mitems].modifiers.categories){
-         modifiersbodyid.innerHTML +='<div class="col-xs-12 col-md-12"<p><u>'+JSON.categories[cat].menuitems[mitems].modifiers.categories[o1].name+'</u></p></div>';
+         modifiersbodyid.innerHTML +='<div class="col-xs-12 col-md-12"><u>'+JSON.categories[cat].menuitems[mitems].modifiers.categories[o1].name+'</u></div>';
          for(var o2 in JSON.categories[cat].menuitems[mitems].modifiers.categories[o1].modifiers){
-           modifiersbodyid.innerHTML +='<div class="col-xs-2 col-md-2"><div class=" form-group "><input type="checkbox" name="fancy-checkbox-warning" id="fancy-checkbox-warning\''+o1+o2+'\'" autocomplete="off" onclick="extras('+cat+','+mitems+','+o1+','+o2+')" /><div><label for="fancy-checkbox-warning\''+o1+o2+'\'" id="btn" class=" btn">'+JSON.categories[cat].menuitems[mitems].modifiers.categories[o1].modifiers[o2].name+'</label></div></div></div>';
+           modifiersbodyid.innerHTML +='<div class="col-xs-2 col-md-2"><input type="checkbox" name="fancy-checkbox-warning" id="fancy-checkbox-warning\''+o1+o2+'\'" autocomplete="off" onclick="extras('+cat+','+mitems+','+o1+','+o2+')"/><div id="fancy"><label for="fancy-checkbox-warning\''+o1+o2+'\'" id="btn" class=" btn ">'+JSON.categories[cat].menuitems[mitems].modifiers.categories[o1].modifiers[o2].name+'</label></div></div>';
          }
        }
        modifiersfooterid.innerHTML= '<Button id="btnAddOrder" onclick="order('+cat+','+mitems+')">add to order</Button>'
