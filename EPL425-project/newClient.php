@@ -59,7 +59,7 @@
 <div class="form-group">
   <label class="col-xs-4 col-md-4 control-label" for="email">email</label>
   <div class="col-xs-4 col-md-4">
-  <input id="email" name="email" placeholder="email@gmail.com" class="form-control input-md" type="text">
+  <input id="email" name="email" required placeholder="email@gmail.com" class="form-control input-md" type="text">
 
   </div>
 </div>
