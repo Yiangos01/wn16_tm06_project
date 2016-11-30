@@ -6,6 +6,7 @@ switch($_POST['function1']){
     case 'item': items(); break;
     case 'telephone': address();break;
     case 'display': display();break;
+    case 'map' : showmap(); break;
     default: break;
 }
 
@@ -81,6 +82,20 @@ function address(){
     while($row=mysqli_fetch_array($result2)){
       array_push($result,$row[3]."\n");
     }
+    echo implode(" ",$result);
+  }
+
+  function showmap(){
+    $result=array();
+    $user='root';
+    $pass='';
+    $db='pos2';
+    $db=new mysqli('localhost',$user,$pass,$db) or die("Unable to connect");
+    $sql = "SELECT * FROM `order` JOIN `customer` WHERE order.customerId=customer.id AND order.type=0 AND order.status!=1 and order.status!=3";
+    $result2 = mysqli_query($db,$sql);
+    while($row=mysqli_fetch_array($result2)){
+      array_push($result,$row[10]."\n");
+  }
     echo implode(" ",$result);
   }
 ?>
