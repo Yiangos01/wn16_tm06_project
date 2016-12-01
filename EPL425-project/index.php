@@ -11,7 +11,7 @@
   <link href="css/simple-sidebar.css" rel="stylesheet">
   <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
    <link rel="stylesheet" href="css/style.css">
-   <script type="text/javascript" src="pos.js"> </script>
+   <script type="text/javascript" src="js/pos.js"> </script>
 
 </head>
 
@@ -51,7 +51,7 @@
      <button id="checkbtn" onclick="checktel()">Valid?</button>
 
     <form id="type">
-  <div class="btn-group-sm" data-toggle="buttons">
+  <div class="btn-group btn-group-sm" data-toggle="buttons">
     <label class="btn btn-primary ">
         <input class="type" type="radio" name="options" id="delivery" value="delivery" autocomplete="off" > delivery
     </label>

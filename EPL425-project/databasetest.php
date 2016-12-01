@@ -86,6 +86,7 @@ function address(){
   }
 
   function showmap(){
+    $aStatus =  array("in Progress", "Cancelled", "Ready", "Finished", "Paid");
     $result=array();
     $user='root';
     $pass='';
@@ -94,7 +95,7 @@ function address(){
     $sql = "SELECT * FROM `order` JOIN `customer` WHERE order.customerId=customer.id AND order.type=0 AND order.status!=1 and order.status!=3";
     $result2 = mysqli_query($db,$sql);
     while($row=mysqli_fetch_array($result2)){
-      array_push($result,$row[10]."\n");
+      array_push($result,$row[10]."|*|".$row[0]."|*| ".$aStatus[$row[5]]." |*|".$row[8]."\n");
   }
     echo implode(" ",$result);
   }
