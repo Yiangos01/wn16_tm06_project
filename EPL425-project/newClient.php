@@ -6,7 +6,7 @@
 
   <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
    <link rel="stylesheet" href="css/style.css">
-   <script type="text/javascript" src="pos.js"> </script>
+   <script type="text/javascript" src="js/pos.js"> </script>
    <link href="css/simple-sidebar.css" rel="stylesheet">
 
 
@@ -37,7 +37,9 @@
 <div class="form-group">
   <label class="col-xs-4 col-md-4 control-label" for="name">Name</label>
   <div class="col-xs-4 col-md-4">
-  <input id="name" name="name" required  placeholder="" class="form-control input-md" type="text">
+
+  <input id="name" name="name" placeholder="" class="form-control input-md" required type="text">
+
 
   </div>
 </div>
@@ -45,7 +47,8 @@
 <div class="form-group">
   <label class="col-xs-4 col-md-4 control-label" for="phone">phone</label>
   <div class="col-xs-4 col-md-4">
-  <input id="phone" name="phone" required  placeholder="" class="form-control input-md" type="text">
+
+  <input id="phone" name="phone" placeholder="" class="form-control input-md" pattern=".{8,}" required title="8 characters minimum" type="text">
 
   </div>
 </div>
@@ -53,7 +56,9 @@
 <div class="form-group">
   <label class="col-xs-4 col-md-4 control-label" for="address">address</label>
   <div class="col-xs-4 col-md-4">
-  <input id="address" name="address" required  placeholder="" class="form-control input-md" type="text">
+
+  <input id="address" name="address" placeholder="" required class="form-control input-md" type="text">
+
 
   </div>
 </div>
