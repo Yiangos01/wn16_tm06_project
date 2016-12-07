@@ -46,7 +46,7 @@ var infowindow;
 
   }
   function geocodeAdd(geocoder, resultsMap , addressArg) {
-    Arraddress=addressArg.split("|*|");
+    var Arraddress=addressArg.split("|*|");
 
     var address=Arraddress[0];
 
@@ -57,6 +57,7 @@ var infowindow;
           map: resultsMap,
           position: results[0].geometry.location
         });
+		
         google.maps.event.addListener(marker, 'click', function() {
           infowindow.setContent("order id: " + Arraddress[1]+" is " +Arraddress[2]);
           infowindow.open(resultsMap, this);
